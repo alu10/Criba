@@ -1,15 +1,14 @@
-package OptimizacionDocumentacion;
 import java.util.Scanner;
 
 public class Criba {
 	
-	// Generar números primos de 1 a max
+	// Generar nÃºmeros primos de 1 a max
 	public static int[] generarPrimos (int max) {
 		
 		int i,j;
 		if (max >= 2) {
 			// Declaraciones
-			int dim = max + 1; // Tamaño del array
+			int dim = max + 1; // TamaÃ±o del array
 			boolean[] esPrimo = new boolean[dim];
 			// Inicializar el array
 			for (i=0; i<dim; i++)
@@ -19,19 +18,19 @@ public class Criba {
 			// Criba
 			for (i=2; i<Math.sqrt(dim)+1; i++) {
 				if (esPrimo[i]) {
-					// Eliminar los múltiplos de i
+					// Eliminar los mÃºltiplos de i
 					for (j=2*i; j<dim; j+=i)
 						esPrimo[j] = false;
 				}
 			}
-			// ¿Cuántos primos hay?
+			// Â¿CuÃ¡ntos primos hay?
 			int cuenta = 0;
 			for (i=0; i<dim; i++) {
 				if (esPrimo[i])
 					cuenta++;
 			}
 			
-			// Rellenar el vector de números primos
+			// Rellenar el vector de nÃºmeros primos
 			int[] primos = new int[cuenta];
 			for (i=0, j=0; i<dim; i++) {
 				if (esPrimo[i])
@@ -40,13 +39,13 @@ public class Criba {
 			return primos;
 		} else { // max < 2
 			return new int[0];
-			// Vector vacío
+			// Vector vacÃ­o
 		}
 	}
 	
 	public static void main(String[] args) {
 		Scanner teclado=new Scanner(System.in);
-		System.out.println("Introduce el número para la criba de Erastótenes:");
+		System.out.println("Introduce el nÃºmero para la criba de ErastÃ³tenes:");
 		int dato=teclado.nextInt();
 		int vector[]=new int[dato];
 		System.out.println("\nVector inicial hasta :"+dato);
@@ -60,5 +59,6 @@ public class Criba {
 			if (i%10==0) System.out.println();
 			System.out.print(vector[i]+"\t");
 		}
+		teclado.close();
 	}
 }
