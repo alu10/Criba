@@ -43,6 +43,7 @@ public class Criba {
 		}
 	}
 	
+	
 	public static void main(String[] args) {
 		Scanner teclado=new Scanner(System.in);
 		System.out.println("Introduce el n�mero para la criba de Erast�tenes:");
